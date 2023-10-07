@@ -3,6 +3,7 @@ package com.example.demo.account;
 import com.example.demo.account.domain.Account;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * packageName    : com.example.demo.account
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class AccountWriteApiService {
     private final AccountRepository accountRepository;
 
