@@ -14,4 +14,10 @@ public class Company extends BaseEntity {
     private String name;
     private String country;
     private String area;
+
+    public Company(String name, String country, String area) {
+        this.name = name;
+        this.country = country;
+        this.area = area;
+    }
 }
