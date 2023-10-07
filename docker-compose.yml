@@ -1,0 +1,12 @@
+version: '3'
+services:
+  database :
+    image : mysql
+    environment:
+      MYSQL_DATABASE : wanted
+      MYSQL_USER : wanted
+      MYSQL_PASSWORD : wanted12!
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_PASSWORD : root
+    ports :
+      - "3009:3306"
