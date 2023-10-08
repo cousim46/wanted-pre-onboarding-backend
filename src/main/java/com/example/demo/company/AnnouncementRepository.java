@@ -1,16 +1,12 @@
 package com.example.demo.company;
 
-/**
- * packageName    : com.example.demo.company
- * fileName       : AnnouncementRepository
- * author         : jhw1015
- * date           : 2023/10/08
- * description    :
- * ===========================================================
- * DATE              AUTHOR             NOTE
- * -----------------------------------------------------------
- * 2023/10/08           jhw1015           최초 생성
- */
-public class AnnouncementRepository {
+import com.example.demo.company.domain.Announcement;
+import com.example.demo.company.domain.Company;
+import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AnnouncementRepository extends JpaRepository<Announcement, Long> {
+
+    List<Long> findAllByCompany(Company company);
 
 }
