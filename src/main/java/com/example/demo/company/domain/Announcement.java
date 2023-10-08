@@ -22,5 +22,20 @@ public class Announcement extends BaseEntity {
     private String position;
     @Column(nullable = false)
     private String content;
-    private Long recruitmentCompensation;
+    private long recruitmentCompensation;
+    @Column(nullable = false)
+    private String skill;
+
+    public Announcement(Company company, String position, String content,
+        long recruitmentCompensation,
+        String skill) {
+        this.company = company;
+        this.position = position;
+        this.content = content;
+        this.recruitmentCompensation = recruitmentCompensation;
+        this.skill = skill;
+    }
+    public Company findCompany() {
+        return company != null ? company : null;
+    }
 }
