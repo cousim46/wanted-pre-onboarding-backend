@@ -37,7 +37,7 @@ public class AnnouncementQueryDslRepository {
     public List<ListResponse> getAnnouncements() {
         return jpaQueryFactory.select(Projections.constructor(ListResponse.class,
                 announcement.id, company.name, company.country, company.area,
-                announcement.recruitmentCompensation, announcement.skill
+                announcement.position, announcement.recruitmentCompensation, announcement.skill
             )).from(announcement)
             .innerJoin(announcement.company, company)
             .orderBy(announcement.createdAt.desc()).fetch();
