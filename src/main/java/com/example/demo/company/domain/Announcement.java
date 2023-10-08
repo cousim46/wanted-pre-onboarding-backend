@@ -16,7 +16,6 @@ import lombok.NoArgsConstructor;
 public class Announcement extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(nullable = false)
     private Company company;
     @Column(nullable = false)
     private String position;
@@ -37,5 +36,12 @@ public class Announcement extends BaseEntity {
     }
     public Company findCompany() {
         return company != null ? company : null;
+    }
+
+    public void update(String position, String content, String skill, long recruitmentCompensation) {
+        this.position = position;
+        this.content = content;
+        this.skill = skill;
+        this.recruitmentCompensation = recruitmentCompensation;
     }
 }
