@@ -16,6 +16,6 @@ public class CompanyController {
     private final CompanyWriteService companyWriteService;
     @PostMapping("/create")
     public Long create(@Valid @RequestBody Create create) {
-        return companyWriteService.create(create.getName(),create.getCountry(),create.getName());
+        return companyWriteService.create(create.getName(),create.getCountry(),create.getArea());
     }
 }
