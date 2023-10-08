@@ -25,9 +25,9 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler({GlobalRuntimeException.class})
-    public static ResponseEntity<RuntimeExceptionResponse> response(ErrorCode errorCode) {
-        return ResponseEntity.status(errorCode.getStatus())
-            .body(RuntimeExceptionResponse.create(errorCode));
+    public static ResponseEntity<RuntimeExceptionResponse> response(GlobalRuntimeException e) {
+        return ResponseEntity.status(e.getStatus())
+            .body(RuntimeExceptionResponse.create(e.getErrorCode()));
     }
 }
 
