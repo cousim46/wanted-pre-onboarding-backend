@@ -16,10 +16,13 @@ import lombok.NoArgsConstructor;
 public class AnnouncementHistory extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(nullable = false)
     private Account account;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(nullable = false)
     private Announcement announcement;
+
+    public AnnouncementHistory(Account account, Announcement announcement) {
+        this.account = account;
+        this.announcement = announcement;
+    }
 }
