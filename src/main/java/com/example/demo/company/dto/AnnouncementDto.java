@@ -47,4 +47,37 @@ public class AnnouncementDto {
         }
     }
 
+    @AllArgsConstructor
+    @Getter
+    public static class UpdateRequest {
+        @NotBlank
+        private String position;
+        private long recruitmentCompensation;
+        @NotBlank
+        private String content;
+        @NotBlank
+        private String skill;
+    }
+
+    @AllArgsConstructor
+    @Getter
+    public static class RegisterRequest {
+        @NotNull
+        private Long announcementId;
+        @NotNull
+        private Long accountId;
+    }
+
+    @AllArgsConstructor
+    @Getter
+    public static class ListResponse {
+        private Long announcementId;
+        private String companyName;
+        private String country;
+        private String area;
+        private String position;
+        private long recruitmentCompensation;
+        private String skill;
+    }
+
 }
