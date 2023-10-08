@@ -103,6 +103,7 @@ docker-compose up
 ### 채용공고 신청
 - Http Method : Get
 - API 주소 : /api/announcement/register
+  
 요청 데이터
 ```json
 {
