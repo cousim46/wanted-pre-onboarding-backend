@@ -25,4 +25,8 @@ public class AnnouncementWriteService {
             request.getContent(), request.getRecruitmentCompensation(), request.getSkill());
         return announcementRepository.save(announcement).getId();
     }
+
+    public void delete(Long id) {
+        announcementRepository.deleteById(id);
+    }
 }
