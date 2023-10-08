@@ -30,8 +30,8 @@ public class AnnouncementController {
         return announcementWriteService.create(request);
     }
 
-    @DeleteMapping
-    public void delete(Long announcementId) {
+    @DeleteMapping("/{announcementId}")
+    public void delete(@PathVariable("announcementId")Long announcementId) {
         announcementWriteService.delete(announcementId);
     }
     @GetMapping("/{announcementId}")
